@@ -78,7 +78,8 @@ post{
    always{
    	sendSlackNotifcation()
    }
-}def sendSlackNotifcation()
+}
+def sendSlackNotifcation()
 {
 if ( currentBuild.currentResult == "SUCCESS" ) {
 buildSummary = "Job_name: ${env.JOB_NAME}\n Build_id: ${env.BUILD_ID} \n Status: *SUCCESS*\n Build_url: ${BUILD_URL}\n Job_url: ${JOB_URL} \n"
