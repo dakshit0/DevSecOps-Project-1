@@ -4,15 +4,15 @@ pipeline {
         maven 'apache-maven-3.0.1' 
     }
     stages {
-        stage('Example') {
+        stage('maven-version') {
             steps {
                 sh 'mvn --version'
             }
         }
-    }
-    stage('Checkout git') {
+	stage('Checkout git') {
      steps {
-	git branch: 'main', url: 'https://github.com/praveensirvi1212/DevSecOps-Project-1'
+	git branch: 'main', url: 'https://github.com/dakshit0/DevSecOps-Project-1'
   }
-}
+}    
+    }
 }
