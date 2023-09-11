@@ -13,7 +13,7 @@ pipeline {
 }
 stage('Checkout git') {
      steps {
-	git branch: 'main', url: 'https://github.com/dakshit0/DevSecOps-project-1'
+	git branch: 'main', url: 'git@github.com:dakshit0/DevSecOps-Project-1.git'
   }
 }
 stage ('Build & JUnit Test') {
