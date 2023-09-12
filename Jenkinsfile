@@ -26,7 +26,7 @@ pipeline {
         }
         stage('SonarQube Analysis'){
             steps{
-                withSonarQubeEnv('SonarQube-server') {
+                withSonarQubeEnv('sonarqube-server') {
                         sh 'mvn clean verify sonar:sonar \
                            -Dsonar.projectKey=devsecops-1 \
                            -Dsonar.host.url=http://192.168.12.40:9000 \
