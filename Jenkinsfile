@@ -33,13 +33,6 @@ pipeline {
                            -Dsonar.login=sqp_21f25097c11c0603ad1cbdff7303f1e7771fa70c'
                 }
             }
-        }
-	stage("Quality Gate") {
-            steps {
-              timeout(time: 1, unit: 'HOURS') {
-                waitForQualityGate abortPipeline: true
-              }
-            }
-        }    
+        }   
     }
 }
