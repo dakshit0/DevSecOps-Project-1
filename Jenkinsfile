@@ -31,15 +31,17 @@ pipeline {
                         -Dsonar.projectKey=devsecops-1 \
                         -Dsonar.host.url=http://192.168.12.40:9000 \
                         -Dsonar.login=sqp_d427cc8078d87d969a830e2652c3cdaf86d5f0b2'
+			sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
                 }
-            }
-        }
-        stage("Quality Gate") {
+	    }
+                }
+	  stage("Quality Gate") {
             steps {
               timeout(time: 1, unit: 'HOURS') {
                 waitForQualityGate abortPipeline: true
               }
             }
+	   }
+            }
         }
-    }
-}
+        
